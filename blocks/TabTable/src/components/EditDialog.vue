@@ -60,7 +60,9 @@ export default {
   props: {
     row: {
       type: Object,
-      default: {},
+      default: () => {
+        return {};
+      },
     },
     keyName: {
       type: String,

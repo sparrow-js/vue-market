@@ -19,8 +19,8 @@ const insertTemplate = (blockName) => {
 const screenshot = async (blockName, nextblockName, width, height) => {
   if (blockName) {
     const imagePath = path.join(projectDir, blockName, 'snapshot.png');
+    console.log(imagePath + '*************');
     await page.goto(devServerUrl);
-  
     await page.setViewport({
       width: width + 56,
       height: height + 56
@@ -29,7 +29,7 @@ const screenshot = async (blockName, nextblockName, width, height) => {
       path: imagePath
     });
   }
- 
+  console.log(nextblockName + '*************');
   if (nextblockName) {
     insertTemplate(nextblockName);
   }
@@ -59,7 +59,11 @@ const openBrowser = async () => {
 
 async function startScreenShot () {
   await openBrowser();
-  const blockNames = await utils.getBlockNames();
+  // const blockNames = await utils.getBlockNames();
+  const blockNames = [
+    'BasicException',
+    'BasicForm',
+  ];
   blockNames.unshift('');
   devServer.run(() => {
     const blockName = blockNames.shift();
@@ -69,7 +73,7 @@ async function startScreenShot () {
     }
     screenshot(blockName, nextBlockName, 900, 500);
     if (!nextBlockName) {
-      console.log(`${nextBlockName} end sreenshot`);
+      console.log(`end sreenshot`);
       devServer.stop();
       process.exit()
     }

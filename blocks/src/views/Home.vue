@@ -1,17 +1,17 @@
 
     <template>
       <div class="home">
-        <WaterfallChart />
+        <BasicException />
       </div>
     </template>
     
     <script>
-    import WaterfallChart from '../../WaterfallChart/src';
+    import BasicException from '../../BasicException/src';
     
     export default {
       name: "home",
       components: {
-        WaterfallChart
+        BasicException
       }
     };
     </script>
