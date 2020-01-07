@@ -12,10 +12,7 @@
     "url": "https://github.com/sparrow-js/vue-market/tree/master/blocks/BasicForm"
   },
   "license": "MIT",
-  "keywords": [
-    "ice",
-    "ice-block"
-  ],
+  "keywords": ["sparrow", "vue", "block"],
   "publishConfig": {
     "access": "public",
     "registry": "http://registry.npmjs.com"
@@ -25,9 +22,9 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "basic-form",
+    "name": "BasicForm",
     "title": "基础表单",
-    "categories": ["表单"],
+    "tags": ["表单"],
     "screenshot": ""
   }
 }

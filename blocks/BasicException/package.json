@@ -9,7 +9,7 @@
     "url": "https://github.com/sparrow-js/vue-market/tree/master/blocks/BasicException"
   },
   "license": "MIT",
-  "keywords": ["ice", "vue", "block"],
+  "keywords": ["sparrow", "vue", "block"],
   "publishConfig": {
     "access": "public",
     "registry": "http://registry.npmjs.com"
@@ -19,10 +19,9 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "basic-exception",
+    "name": "BasicException",
     "title": "基础异常报错",
-    "categories": ["异常"],
-    "screenshot":
-      ""
+    "tags": ["异常"],
+    "screenshot":""
   }
 }

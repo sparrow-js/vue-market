@@ -9,13 +9,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ice-lab/vue-materials/tree/master/blocks/FixedTable"
+    "url": "https://github.com/sparrow-js/vue-market/tree/master/blocks/FixedTable"
   },
   "license": "MIT",
-  "keywords": [
-    "ice",
-    "ice-block"
-  ],
+  "keywords": ["sparrow", "vue", "block"],
   "publishConfig": {
     "access": "public",
     "registry": "http://registry.npmjs.com"
@@ -25,9 +22,9 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "fixed-table",
+    "name": "FixedTable",
     "title": "固定表格",
-    "categories": [
+    "tags": [
       "表格"
     ],
     "screenshot": ""

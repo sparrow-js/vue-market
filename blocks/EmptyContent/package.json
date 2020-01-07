@@ -6,10 +6,10 @@
   "files": ["src/", "lib/"],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ice-lab/vue-materials/tree/master/blocks/EmptyContent"
+    "url": "https://github.com/sparrow-js/vue-market/tree/master/blocks/EmptyContent"
   },
   "license": "MIT",
-  "keywords": ["ice", "vue", "block"],
+  "keywords": ["sparrow", "vue", "block"],
   "publishConfig": {
     "access": "public",
     "registry": "http://registry.npmjs.com"
@@ -19,9 +19,9 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "empty-content",
+    "name": "EmptyContent",
     "title": "空内容提示",
-    "categories": ["异常"],
+    "tags": ["异常"],
     "screenshot": ""
   }
 }

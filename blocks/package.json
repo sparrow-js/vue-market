@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "screenshot": "node ./script/screenshot.js"
+    "screenshot": "node ./script/screenshot.js",
+    "generate:json": "node ./script/index.js"
   },
   "dependencies": {
     "@d2-projects/d2-crud": "^2.1.2",

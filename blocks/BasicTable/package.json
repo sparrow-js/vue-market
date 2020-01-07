@@ -12,10 +12,7 @@
     "url": "https://github.com/sparrow-js/vue-market/tree/master/blocks/BasicTable"
   },
   "license": "MIT",
-  "keywords": [
-    "ice",
-    "ice-block"
-  ],
+  "keywords": ["sparrow", "vue", "block"],
   "publishConfig": {
     "access": "public",
     "registry": "http://registry.npmjs.com"
@@ -25,9 +22,9 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "basic-table",
+    "name": "BasicTable",
     "title": "基础表格",
-    "categories": [
+    "tags": [
       "表格"
     ],
     "screenshot": ""

@@ -9,14 +9,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ice-lab/vue-materials/tree/master/blocks/TabTable"
+    "url": "https://github.com/sparrow-js/vue-market/tree/master/blocks/TabTable"
   },
   "license": "MIT",
-  "keywords": [
-    "ice",
-    "vue",
-    "block"
-  ],
+  "keywords": ["sparrow", "vue", "block"],
   "publishConfig": {
     "access": "public",
     "registry": "http://registry.npmjs.com"
@@ -26,9 +22,9 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "tab-table",
+    "name": "TabTable",
     "title": "基于element的标签页表格组合",
-    "categories": [
+    "tags": [
       "表格"
     ],
     "screenshot": ""

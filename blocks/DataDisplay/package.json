@@ -9,14 +9,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ice-lab/vue-materials/tree/master/blocks/DataDisplay"
+    "url": "https://github.com/sparrow-js/vue-market/tree/master/blocks/DataDisplay"
   },
   "license": "MIT",
-  "keywords": [
-    "ice",
-    "vue",
-    "block"
-  ],
+  "keywords": ["sparrow", "vue", "block"],
   "publishConfig": {
     "access": "public",
     "registry": "http://registry.npmjs.com"
@@ -27,9 +23,9 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "data-display",
+    "name": "DataDisplay",
     "title": "数据展示",
-    "categories": [
+    "tags": [
       "数据展示"
     ],
     "screenshot": ""
