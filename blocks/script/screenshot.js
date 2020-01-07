@@ -11,15 +11,14 @@ const projectDir = process.cwd();
 const devServerUrl = 'http://localhost:8080/#/';
 const viewPath = path.join(projectDir, 'src/views/Home.vue');
 
-const insertTemplate = (blockName) => {
-  const template = utils.getTemplate(blockName);
+const insertTemplate = (name) => {
+  const template = utils.getTemplate(name);
   fs.writeFile(viewPath, template, 'utf8');
 };
 
 const screenshot = async (blockName, nextblockName, width, height) => {
   if (blockName) {
     const imagePath = path.join(projectDir, blockName, 'snapshot.png');
-    console.log(imagePath + '*************');
     await page.goto(devServerUrl);
     await page.setViewport({
       width: width + 56,
@@ -29,9 +28,10 @@ const screenshot = async (blockName, nextblockName, width, height) => {
       path: imagePath
     });
   }
-  console.log(nextblockName + '*************');
   if (nextblockName) {
-    insertTemplate(nextblockName);
+    setTimeout(() => {
+      insertTemplate(nextblockName);
+    }, 500);
   }
 };
 
@@ -59,19 +59,15 @@ const openBrowser = async () => {
 
 async function startScreenShot () {
   await openBrowser();
-  // const blockNames = await utils.getBlockNames();
-  const blockNames = [
-    'BasicException',
-    'BasicForm',
-  ];
+  const blockNames = await utils.getBlockNames();
   blockNames.unshift('');
-  devServer.run(() => {
+  devServer.run(async () => {
     const blockName = blockNames.shift();
     const nextBlockName = blockNames[0];
     if(nextBlockName) {
       console.log(`${nextBlockName} start sreenshot`);
     }
-    screenshot(blockName, nextBlockName, 900, 500);
+    await screenshot(blockName, nextBlockName, 900, 500);
     if (!nextBlockName) {
       console.log(`end sreenshot`);
       devServer.stop();
