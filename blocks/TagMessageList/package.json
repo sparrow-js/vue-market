@@ -2,10 +2,7 @@
   "name": "@sparrow-vue/tag-message-list-block",
   "version": "1.0.0",
   "description": "标签消息列表",
-  "author": {
-    "name": "",
-    "email": ""
-  },
+  "author": "",
   "files": [
     "src/",
     "lib/"
@@ -35,6 +32,6 @@
     "categories": [
       "列表"
     ],
-    "screenshot": "https://user-images.githubusercontent.com/1523060/39664002-246a6496-50af-11e8-996f-ed203d7ad564.png"
+    "screenshot": ""
   }
 }

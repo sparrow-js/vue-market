@@ -1,8 +1,8 @@
 {
   "name": "@sparrow-vue/basic-exception-block",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "基于element-ui组件的基础异常报错",
-  "author": "mowatermelon <neefoxmo@gmail.com>",
+  "author": "",
   "files": ["src/", "lib/"],
   "repository": {
     "type": "git",

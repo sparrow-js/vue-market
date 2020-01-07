@@ -2,7 +2,7 @@
   "name": "@sparrow-vue/basic-form-block",
   "version": "1.0.0",
   "description": "基础表单",
-  "author": "ice-admin@alibaba-inc.com",
+  "author": "",
   "files": [
     "src/",
     "lib/"
