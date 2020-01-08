@@ -12,7 +12,7 @@
   "keywords": ["sparrow", "vue", "block"],
   "publishConfig": {
     "access": "public",
-    "registry": "http://registry.npmjs.com"
+    "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
     "@vue-materials/basic-container": "^1.0.0",
