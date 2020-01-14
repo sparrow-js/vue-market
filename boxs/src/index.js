@@ -1,6 +1,8 @@
 import Box from './components/box';
 import Layout from './components/layout';
 import Paragraph from './components/paragraph';
+import Block from './components/block';
+
 import Toolbar from './components/toolbar';
 import Event from './utils/Event';
 
@@ -8,6 +10,7 @@ const components = {
     Box,
     Layout,
     Paragraph,
+    Block,
     Toolbar
 };
 
