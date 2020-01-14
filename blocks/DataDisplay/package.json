@@ -23,7 +23,7 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "DataDisplay",
+    "name": "data-display",
     "title": "数据展示",
     "tags": [
       "数据展示"

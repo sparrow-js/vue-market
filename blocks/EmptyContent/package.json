@@ -19,7 +19,7 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "EmptyContent",
+    "name": "empty-content",
     "title": "空内容提示",
     "tags": ["异常"],
     "screenshot": ""

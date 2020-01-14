@@ -19,7 +19,7 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "BasicNotFound",
+    "name": "basic-not-found",
     "title": "404 报错提示",
     "tags": ["异常"],
     "screenshot": ""

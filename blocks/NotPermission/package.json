@@ -19,7 +19,7 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "NotPermission",
+    "name": "not-permission",
     "title": "无权限提示",
     "tags": ["异常"],
     "screenshot":""

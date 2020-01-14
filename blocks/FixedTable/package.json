@@ -22,7 +22,7 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "FixedTable",
+    "name": "fixed-table",
     "title": "固定表格",
     "tags": [
       "表格"

@@ -22,7 +22,7 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "TabTable",
+    "name": "tab-table",
     "title": "基于element的标签页表格组合",
     "tags": [
       "表格"

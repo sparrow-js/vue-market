@@ -19,7 +19,7 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "BasicException",
+    "name": "basic-exception",
     "title": "基础异常报错",
     "tags": ["异常"],
     "screenshot":""

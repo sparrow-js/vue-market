@@ -22,7 +22,7 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "BasicForm",
+    "name": "basic-form",
     "title": "基础表单",
     "tags": ["表单"],
     "screenshot": ""

@@ -18,7 +18,7 @@
     "vue": "^2.5.16"
   },
   "blockConfig": {
-    "name": "BasicTable",
+    "name": "basic-table",
     "title": "基础表格",
     "tags": [
       "表格"
