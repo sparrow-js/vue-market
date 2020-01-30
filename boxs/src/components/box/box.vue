@@ -3,7 +3,7 @@
       @click="handleClickBlock"
       :class="{'block-active': isActive}"
     >
-        <slot></slot>
+      <slot></slot>
     </div>
 </template>
 <script>
@@ -20,7 +20,7 @@ export default {
     };
   },
   created () {
-    Event.on('block-active-change', this.handlerBlockChange)
+    Event.on('block-active-change', this.handlerBlockChange);
   },
   beforeDestroy () {
     Event.off('block-active-change', this.handlerBlockChange);

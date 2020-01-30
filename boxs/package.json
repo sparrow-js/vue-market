@@ -18,11 +18,9 @@
     "scripts": {
         "dev": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8081 --config build/webpack.dev.config.js",
         "dev:s": "webpack-dev-server --content-base test/ --open --inline --hot --compress --history-api-fallback --port 8081 --host 0.0.0.0 --config build/webpack.dev.config.js",
-        "dist:style": "gulp --gulpfile build/build-style.js",
         "dist:dev": "webpack --config build/webpack.dist.dev.config.js",
         "dist:prod": "webpack --config build/webpack.dist.prod.config.js",
-        "dist:locale": "webpack --config build/webpack.dist.locale.config.js",
-        "dist": "npm run dist:style && npm run dist:dev && npm run dist:prod && npm run dist:locale",
+        "dist": "npm run dist:dev && npm run dist:prod",
         "lint": "eslint --fix --ext .js,.vue src",
         "tslint": "tslint --type-check --fix --project .",
         "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",

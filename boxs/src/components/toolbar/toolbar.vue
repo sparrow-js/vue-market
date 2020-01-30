@@ -41,9 +41,18 @@
         @click="handlerActions"
       ></span>
       <div class="toolbar__actions-box" v-show="showActions">
-        <span class="el-icon-bottom toolbar__actions-button"></span>
-        <span class="el-icon-top toolbar__actions-button"></span>
-        <span class="el-icon-close toolbar__actions-button"></span>
+        <span 
+          class="el-icon-bottom toolbar__actions-button"
+          @click="handlerBottom"
+        ></span>
+        <span 
+          class="el-icon-close toolbar__actions-button"
+          @click="handlerClose"
+        ></span>
+        <span 
+          class="el-icon-top toolbar__actions-button"
+          @click="handlerTop"
+        ></span>
       </div>
     </div>
   </div>
@@ -121,6 +130,33 @@ export default {
         }
       })
       this.showToolbar = false;
+    },
+    handlerBottom () {
+      this.showToolbar = false;
+      Event.emit('pivot_operate', {
+        handler: 'generator.scene.bottomBox',
+        data: {
+          boxIndex: this.boxIndex,
+        }
+      });
+    },
+    handlerClose () {
+      this.showToolbar = false;
+      Event.emit('pivot_operate', {
+        handler: 'generator.scene.removeBox',
+        data: {
+          boxIndex: this.boxIndex,
+        }
+      });
+    },
+    handlerTop () {
+      this.showToolbar = false;
+      Event.emit('pivot_operate', {
+        handler: 'generator.scene.topBox',
+        data: {
+          boxIndex: this.boxIndex,
+        }
+      });
     }
   }
 }
