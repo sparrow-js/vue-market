@@ -13,10 +13,6 @@
   },
   "license": "MIT",
   "keywords": ["sparrow", "vue", "block"],
-  "publishConfig": {
-    "access": "public",
-    "registry": "http://registry.npmjs.com"
-  },
   "dependencies": {
     "@vue-materials/basic-container": "^1.0.0",
     "vue": "^2.5.16"
@@ -25,6 +21,6 @@
     "name": "basic-form",
     "title": "基础表单",
     "tags": ["表单"],
-    "screenshot": ""
+    "screenshot": "https://github.com/sparrow-js/vue-market/blob/master/blocks/BasicForm/snapshot.png"
   }
 }

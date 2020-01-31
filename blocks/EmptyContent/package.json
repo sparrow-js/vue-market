@@ -10,10 +10,6 @@
   },
   "license": "MIT",
   "keywords": ["sparrow", "vue", "block"],
-  "publishConfig": {
-    "access": "public",
-    "registry": "http://registry.npmjs.com"
-  },
   "dependencies": {
     "@vue-materials/basic-container": "^1.0.0",
     "vue": "^2.5.16"
@@ -22,6 +18,6 @@
     "name": "empty-content",
     "title": "空内容提示",
     "tags": ["异常"],
-    "screenshot": ""
+    "screenshot": "https://github.com/sparrow-js/vue-market/blob/master/blocks/EmptyContent/snapshot.png"
   }
 }

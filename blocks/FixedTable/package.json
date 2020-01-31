@@ -13,10 +13,6 @@
   },
   "license": "MIT",
   "keywords": ["sparrow", "vue", "block"],
-  "publishConfig": {
-    "access": "public",
-    "registry": "http://registry.npmjs.com"
-  },
   "dependencies": {
     "@vue-materials/basic-container": "^1.0.0",
     "vue": "^2.5.16"
@@ -27,6 +23,6 @@
     "tags": [
       "表格"
     ],
-    "screenshot": ""
+    "screenshot": "https://github.com/sparrow-js/vue-market/blob/master/blocks/FixedTable/snapshot.png"
   }
 }

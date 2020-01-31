@@ -10,10 +10,6 @@
   },
   "license": "MIT",
   "keywords": ["sparrow", "vue", "block"],
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
   "dependencies": {
     "@vue-materials/basic-container": "^1.0.0",
     "vue": "^2.5.16"
@@ -22,6 +18,6 @@
     "name": "basic-not-found",
     "title": "404 报错提示",
     "tags": ["异常"],
-    "screenshot": ""
+    "screenshot": "https://github.com/sparrow-js/vue-market/blob/master/blocks/BasicNotFound/snapshot.png"
   }
 }

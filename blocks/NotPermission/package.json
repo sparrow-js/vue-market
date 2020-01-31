@@ -1,6 +1,6 @@
 {
   "name": "@sparrow-vue/not-permission-block",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "基于element-ui组件的无权限提示",
   "author": "",
   "files": ["src/", "lib/"],
@@ -10,10 +10,6 @@
   },
   "license": "MIT",
   "keywords": ["sparrow", "vue", "block"],
-  "publishConfig": {
-    "access": "public",
-    "registry": "http://registry.npmjs.com"
-  },
   "dependencies": {
     "@vue-materials/basic-container": "^1.0.0",
     "vue": "^2.5.16"
@@ -22,6 +18,6 @@
     "name": "not-permission",
     "title": "无权限提示",
     "tags": ["异常"],
-    "screenshot":""
+    "screenshot":"https://github.com/sparrow-js/vue-market/blob/master/blocks/NotPermission/snapshot.png"
   }
 }

@@ -7,9 +7,11 @@
   >
     <div class="toolbar__box-add">
       <span 
-        class="el-icon-plus toolbar__add-icon"
+        class="toolbar__add-icon"
         @click="openBoxTool"
-      ></span>
+      >
+        <font-awesome-icon :icon="iconPlus" />
+      </span>
     </div>
     <div class="toolbar__box" v-show="showBoxTool">
       <ul class="toolbar__box-list">
@@ -37,30 +39,48 @@
       :style="actionsStyles"
     >
       <span 
-        class="el-icon-more toolbar__actions-icon"       
+        class="toolbar__actions-icon"       
         @click="handlerActions"
-      ></span>
+      >
+        <font-awesome-icon :icon="iconEllipsisH" />
+      </span>
       <div class="toolbar__actions-box" v-show="showActions">
         <span 
-          class="el-icon-bottom toolbar__actions-button"
+          class="toolbar__actions-button"
           @click="handlerBottom"
-        ></span>
+        >
+          <font-awesome-icon :icon="iconArrowDown" />
+        </span>
         <span 
-          class="el-icon-close toolbar__actions-button"
+          class="toolbar__actions-button"
           @click="handlerClose"
-        ></span>
+        >
+          <font-awesome-icon :icon="iconTimes" />
+        </span>
         <span 
-          class="el-icon-top toolbar__actions-button"
+          class="toolbar__actions-button"
           @click="handlerTop"
-        ></span>
+        >
+          <font-awesome-icon :icon="iconfaArrowUp" />
+        </span>
       </div>
     </div>
   </div>
 </template>
 <script>
 import Event from '../../utils/Event'
-
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { 
+  faPlus,
+  faEllipsisH,
+  faArrowDown,
+  faArrowUp,
+  faTimes
+} from '@fortawesome/free-solid-svg-icons'
 export default {
+  components: {
+    FontAwesomeIcon
+  },
   props: {
     list: {
       type: Array,
@@ -85,7 +105,12 @@ export default {
         row: '',
         col: '',
       },
-      boxIndex: 0
+      boxIndex: 0,
+      iconPlus: faPlus,
+      iconEllipsisH: faEllipsisH,
+      iconArrowDown: faArrowDown,
+      iconfaArrowUp: faArrowUp,
+      iconTimes: faTimes,
     };
   },
   created () {
@@ -172,6 +197,7 @@ export default {
     position: absolute;
     left: 0;
     top: 6px;
+    color: #666;
     :hover{
       color: #0f2af3;
       font-weight: bold;
@@ -220,7 +246,7 @@ export default {
   }
   &__actions-icon{
     color: #666;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     &:hover{
       color: #5668f3;
