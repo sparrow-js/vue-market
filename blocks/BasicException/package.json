@@ -18,6 +18,6 @@
     "name": "basic-exception",
     "title": "基础异常报错",
     "tags": ["异常"],
-    "screenshot":"https://github.com/sparrow-js/vue-market/blob/master/blocks/BasicException/snapshot.png"
+    "screenshot":"https://raw.githubusercontent.com/sparrow-js/vue-market/master/blocks/BasicException/snapshot.png"
   }
 }

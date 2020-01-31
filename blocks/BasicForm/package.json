@@ -21,6 +21,6 @@
     "name": "basic-form",
     "title": "基础表单",
     "tags": ["表单"],
-    "screenshot": "https://github.com/sparrow-js/vue-market/blob/master/blocks/BasicForm/snapshot.png"
+    "screenshot": "https://raw.githubusercontent.com/sparrow-js/vue-market/master/blocks/BasicForm/snapshot.png"
   }
 }
