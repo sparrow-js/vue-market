@@ -209,7 +209,6 @@ export default {
     min-width: 200px;
     left: 36px;
     top: -5px;
-    background: #fff;
   }
   &__box-list{
     list-style: none;
@@ -217,6 +216,7 @@ export default {
     padding: 6px 10px;
     border: 1px solid #EEE;
     border-radius: 4px;
+    background: #fff;
   }
   &__box-item{
     font-size: 14px;

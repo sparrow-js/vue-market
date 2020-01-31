@@ -71,7 +71,6 @@ export default {
   },
   methods: {
     handlerClickLabel (event) {
-      console.log('************')
       console.log(event);
     }
   }
