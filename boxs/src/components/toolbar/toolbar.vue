@@ -4,6 +4,7 @@
     ref="toolbar" 
     :style="styles" 
     v-show="showToolbar"
+    @click.stop="() => {}"
   >
     <div class="toolbar__box-add">
       <span 
@@ -87,6 +88,10 @@ export default {
       default: () => {
         return [];
       }
+    },
+    isShowToolbar: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -114,7 +119,15 @@ export default {
     };
   },
   created () {
-    Event.on('block-selected', this.handlerShowPosition)
+    Event.on('block-selected', this.handlerShowPosition);
+  },
+  watch: {
+    isShowToolbar () {
+      this.showToolbar = this.isShowToolbar;
+    },
+    showToolbar () {
+      this.$emit('change', this.showToolbar);
+    }
   },
   methods: {
     openBoxTool () {
@@ -193,11 +206,11 @@ export default {
   top: 0;
   width: 0;
   &__box-add{
-    font-size: 20px;
+    font-size: 18px;
     position: absolute;
     left: 0;
     top: 6px;
-    color: #666;
+    color: #707684;
     :hover{
       color: #0f2af3;
       font-weight: bold;
@@ -245,8 +258,8 @@ export default {
     position: absolute;
   }
   &__actions-icon{
-    color: #666;
-    font-size: 20px;
+    color: #707684;
+    font-size: 18px;
     font-weight: bold;
     &:hover{
       color: #5668f3;
