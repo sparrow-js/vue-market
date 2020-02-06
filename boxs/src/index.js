@@ -2,6 +2,7 @@ import Box from './components/box';
 import Layout from './components/layout';
 import Paragraph from './components/paragraph';
 import Block from './components/block';
+import BoxForm from './components/BoxForm';
 
 import Toolbar from './components/toolbar';
 import Event from './utils/Event';
@@ -11,6 +12,7 @@ const components = {
     Layout,
     Paragraph,
     Block,
+    BoxForm,
     Toolbar
 };
 

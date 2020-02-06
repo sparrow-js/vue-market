@@ -17,9 +17,9 @@
     <div class="toolbar__box" v-show="showBoxTool">
       <ul class="toolbar__box-list">
         <li class="toolbar__box-item" v-for="(item) in list" :key="item.id" @click="handlerClick(item.id)">
-          <span v-if="item.id !== 10003">{{item.name}}</span>
+          <span v-if="item.id !== 'layout'">{{item.name}}</span>
            <el-popover
-            v-if="item.id === 10003"
+            v-if="item.id === 'layout'"
             placement="bottom"
             trigger="hover"
             width="280">
@@ -147,7 +147,7 @@ export default {
       this.showActions = !this.showActions;
     },
     handlerClick (id) {
-      if (id !== 10003) {
+      if (id !== 'layout') {
         Event.emit('pivot_operate', {
           handler: 'generator.scene.addBox',
           data: {
@@ -219,7 +219,6 @@ export default {
   &__box{
     display: flex;
     position: absolute;
-    min-width: 200px;
     left: 36px;
     top: -5px;
   }
@@ -235,6 +234,7 @@ export default {
     font-size: 14px;
     margin-right: 8px;
     color: #999;
+    word-break: keep-all;
     &:hover{
       font-weight: bold;
       color: #5668f3;

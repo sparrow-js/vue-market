@@ -26,6 +26,10 @@ const router = new VueRouter({
         {
             path: '/view',
             component: (resolve) => require(['./routers/view.vue'], resolve)
+        },
+        {
+            path: '/form',
+            component: (resolve) => require(['./routers/boxForm.vue'], resolve)
         }
     ]
 });

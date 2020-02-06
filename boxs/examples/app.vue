@@ -4,6 +4,7 @@
             <ul>
                 <li><router-link to="/box">box</router-link></li>
                 <li><router-link to="/view">view</router-link></li>
+                <li><router-link to="/form">form</router-link></li>
             </ul>
         </nav>
         <router-view></router-view>
