@@ -35,7 +35,7 @@
             v-if="item.id === 'form'"
             placement="bottom"
             trigger="hover"
-            width="280">
+            width="170">
             <div class="toolbar__box-form">
               <el-input 
                 class="toolbar__box-form-input"  
