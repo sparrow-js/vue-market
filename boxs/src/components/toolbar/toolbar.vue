@@ -16,8 +16,7 @@
     </div>
     <div class="toolbar__box" v-show="showBoxTool">
       <ul class="toolbar__box-list">
-        <li class="toolbar__box-item" v-for="(item) in list" :key="item.id" @click="handlerClick(item.id)">
-          <span v-if="item.id !== 'layout'">{{item.name}}</span>
+        <li class="toolbar__box-item" v-for="(item) in list" :key="item.id" @click="boxHandler(item.id)">
            <el-popover
             v-if="item.id === 'layout'"
             placement="bottom"
@@ -32,6 +31,23 @@
             </div>
             <span slot="reference">{{item.name}}</span>
           </el-popover>
+           <el-popover
+            v-if="item.id === 'form'"
+            placement="bottom"
+            trigger="hover"
+            width="280">
+            <div class="toolbar__box-form">
+              <el-input 
+                class="toolbar__box-form-input"  
+                v-model="form.blockName" 
+                size="mini" 
+                placeholder="名称"
+              ></el-input>
+              <el-button size="mini" type="primary" round @click="sureHandler(item.id)">确定</el-button>
+            </div>
+            <span slot="reference">{{item.name}}</span>
+          </el-popover>
+          <span v-if="!['form', 'layout'].includes(item.id)">{{item.name}}</span>
         </li>
       </ul>
     </div>
@@ -109,6 +125,7 @@ export default {
         isForm: false,
         row: '',
         col: '',
+        blockName: '',
       },
       boxIndex: 0,
       iconPlus: faPlus,
@@ -146,8 +163,8 @@ export default {
     handlerActions () {
       this.showActions = !this.showActions;
     },
-    handlerClick (id) {
-      if (id !== 'layout') {
+    boxHandler (id) {
+      if (id === 'block') {
         Event.emit('pivot_operate', {
           handler: 'generator.scene.addBox',
           data: {
@@ -158,7 +175,7 @@ export default {
         this.showToolbar = false;
       }
     },
-    layoutSure (id) {
+    sureHandler (id) {
       Event.emit('pivot_operate', {
         handler: 'generator.scene.addBox',
         data: {
@@ -289,6 +306,9 @@ export default {
       background: #EEE;
       border-radius: 4px;
     }
+  }
+  &__box-form-input{
+    width: 100px;
   }
 }
 </style>

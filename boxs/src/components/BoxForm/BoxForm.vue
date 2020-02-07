@@ -1,6 +1,5 @@
 <template>
   <div class="form-edit">
-
     <slot></slot>
     <paragraph type="form"></paragraph>
   </div>
