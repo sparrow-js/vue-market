@@ -183,7 +183,7 @@ export default {
           boxIndex: this.boxIndex,
           params: this.form
         }
-      })
+      });
       this.showToolbar = false;
     },
     handlerBottom () {

@@ -42,6 +42,9 @@ export default {
         desc: ''
       }
     }
+  },
+  methods: {
+    onSubmit () {}
   }
 }
 </script>
