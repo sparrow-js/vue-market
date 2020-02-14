@@ -42,13 +42,14 @@ export default {
 .form-edit{
   position: relative;
   padding-top: 24px;
+  border: 1px dashed #DCDFE6;
   .toolbar{
     position: absolute;
-    background: #409EFF;
+    background: #bdc0c7;
     padding: 2px 10px;
-    font-size: 12px;
+    font-size: 10px;
     top: 0px;
-    border-radius: 20px;
+    left: 0px;
     .toolbar-icon{
       color: #fff;
       cursor: pointer;
