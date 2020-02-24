@@ -12,3 +12,8 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.block-edit{
+  border: 1px dashed #dcdfe6;
+}
+</style>
