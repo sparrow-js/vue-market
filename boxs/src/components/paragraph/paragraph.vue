@@ -16,12 +16,17 @@ export default {
       type: String,
       default: ''
     },
+    emit: {
+      type: String,
+      default: ''
+    },
     params: Object,
   },
   methods: {
     focus () {
       if (this.type) {
         Event.emit('insert_handler', {
+          emit: this.emit,
           type: this.type,
           params: this.params
         })

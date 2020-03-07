@@ -12,7 +12,7 @@
       </span>
     </div>
     <slot></slot>
-    <paragraph type="form"></paragraph>
+    <paragraph type="form" emit="client.component.show"></paragraph>
   </div>
 </template>
 <script>
@@ -43,6 +43,7 @@ export default {
   position: relative;
   padding: 24px 12px;
   border: 1px dashed #DCDFE6;
+  background: #fff;
   .toolbar{
     position: absolute;
     background: #bdc0c7;
