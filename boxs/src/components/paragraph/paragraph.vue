@@ -31,6 +31,9 @@ export default {
           params: this.params
         })
       }
+      this.$emit('change', {
+        type: 'focus'
+      })
     }
   }
 }

@@ -12,7 +12,7 @@
       </span>
     </div>
     <slot></slot>
-    <paragraph type="form" emit="client.component.show"></paragraph>
+    <paragraph type="form" emit="client.component.show" @change="change"></paragraph>
   </div>
 </template>
 <script>
@@ -28,6 +28,15 @@ export default {
   methods: {
     toolHandler () {
       this.isActive = !this.isActive;
+      Event.emit('pivot_setting', {
+        data: {
+          type: 'box',
+          handler: 'form'
+        }
+      });
+    },
+    change () {
+      this.isActive = true;
       Event.emit('pivot_setting', {
         data: {
           type: 'box',
