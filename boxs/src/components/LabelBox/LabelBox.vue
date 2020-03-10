@@ -1,19 +1,31 @@
 <template>
   <div class="label-box">
-    <div class="edit-label" contenteditable="true" @focus="focus" @blur="blur">
+    <div class="edit-label" 
+      contenteditable="true" 
+      @focus="focus" 
+      @blur="blur"
+    >
       {{label}}
     </div>
   </div>
 </template>
 <script>
+import Event from '../../utils/Event'
+
 export default {
-  props: ['label'],
+  props: ['label', 'index'],
   methods: {
     focus () {
       console.log('***focus****');
     },
-    blur () {
-      console.log('***blur****');
+    blur (e) {
+      Event.emit('insert_handler', {
+        emit: 'client.component.insertLabel',
+        params: {
+          index: this.index,
+          value: e.target.innerText || ''
+        }
+      })
     }
   }
 }
