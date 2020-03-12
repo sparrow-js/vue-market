@@ -1,6 +1,8 @@
 <template>
   <div class="block-edit">
-    <paragraph v-if="!$slots.default" type="block"></paragraph>
+    <paragraph 
+      type="block"
+    ></paragraph>
     <slot></slot>
   </div>
 </template>

@@ -13,7 +13,7 @@
 import Event from '../../utils/Event'
 
 export default {
-  props: ['label', 'index'],
+  props: ['label', 'indexcomp'],
   methods: {
     focus () {
       console.log('***focus****');
@@ -22,7 +22,7 @@ export default {
       Event.emit('insert_handler', {
         emit: 'client.component.insertLabel',
         params: {
-          index: this.index,
+          index: this.indexcomp,
           value: e.target.innerText || ''
         }
       })

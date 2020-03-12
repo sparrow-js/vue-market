@@ -4,6 +4,7 @@ import Paragraph from './components/paragraph';
 import Block from './components/block';
 import BoxForm from './components/BoxForm';
 import LabelBox from './components/LabelBox';
+import ComponentBox from './components/ComponentBox';
 
 import Toolbar from './components/toolbar';
 import Event from './utils/Event';
@@ -15,7 +16,8 @@ const components = {
     Block,
     BoxForm,
     Toolbar,
-    LabelBox
+    LabelBox,
+    ComponentBox
 };
 
 const box = components;

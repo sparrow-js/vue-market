@@ -12,7 +12,11 @@
       </span>
     </div>
     <slot></slot>
-    <paragraph type="form" emit="client.component.show" @change="change"></paragraph>
+    <paragraph 
+      type="form" 
+      emit="client.component.show" 
+      @change="change"
+    ></paragraph>
   </div>
 </template>
 <script>
