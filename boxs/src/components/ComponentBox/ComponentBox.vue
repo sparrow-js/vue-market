@@ -5,17 +5,26 @@
 </template>
 <script>
 import Paragraph from '../paragraph';
+import Event from '../../utils/Event'
+
 export default {
   props: {
     isActive: {
       type: Boolean,
       default: false
-    }
+    },
+    indexcomp: Number|String
   },
   data () {
     return {
       activeComp: this.isActive || false
     };
+  },
+  watch: {
+    isActive () {
+      console.log('**************1118')
+      this.activeComp = this.isActive;
+    }
   },
   components: {
     Paragraph
@@ -23,6 +32,13 @@ export default {
   methods: {
     clickHandler () {
       this.activeComp = true;
+        Event.emit('insert_handler', {
+        emit: 'forward.generator.scene.setting',
+        params: {
+          handler: 'setActiveIndex',
+          index: this.indexcomp,
+        }
+      })
     }
   }
 }
