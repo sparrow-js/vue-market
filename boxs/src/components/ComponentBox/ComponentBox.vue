@@ -45,10 +45,11 @@ export default {
 <style lang="scss" scoped>
 .comp-box{
   .el-form-item{
-    padding: 10px;
+    
   }
 }
 .is-active>div:first-child{
   border: 1px dashed #DCDFE6;
+  padding: 10px;
 }
 </style>
