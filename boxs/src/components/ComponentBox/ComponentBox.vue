@@ -22,7 +22,6 @@ export default {
   },
   watch: {
     isActive () {
-      console.log('**************1118')
       this.activeComp = this.isActive;
     }
   },
