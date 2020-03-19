@@ -31,6 +31,7 @@
             </div>
             <span slot="reference">{{item.name}}</span>
           </el-popover>
+
            <el-popover
             v-if="item.id === 'form'"
             placement="bottom"
@@ -47,7 +48,25 @@
             </div>
             <span slot="reference">{{item.name}}</span>
           </el-popover>
-          <span v-if="!['form', 'layout'].includes(item.id)">{{item.name}}</span>
+
+          <el-popover
+            v-if="item.id === 'table'"
+            placement="bottom"
+            trigger="hover"
+            width="230">
+            <div class="toolbar__box-form">
+              <el-input 
+                class="toolbar__box-form-input"  
+                v-model="form.blockName" 
+                size="mini" 
+                placeholder="名称"
+              ></el-input>
+              <el-input  class="toolbar__box-layout-input" v-model="form.col" size="mini" placeholder="col"></el-input>
+              <el-button size="mini" type="primary" round @click="sureHandler(item.id)">确定</el-button>
+            </div>
+            <span slot="reference">{{item.name}}</span>
+          </el-popover>
+          <span v-if="!['form', 'layout', 'table'].includes(item.id)">{{item.name}}</span>
         </li>
       </ul>
     </div>
@@ -176,6 +195,7 @@ export default {
       }
     },
     sureHandler (id) {
+      console.log('**************' + id);
       Event.emit('pivot_operate', {
         handler: 'generator.scene.addBox',
         data: {
@@ -222,6 +242,7 @@ export default {
   left: 0;
   top: 0;
   width: 0;
+  z-index: 100;
   &__box-add{
     font-size: 18px;
     position: absolute;
