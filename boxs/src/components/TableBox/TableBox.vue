@@ -65,6 +65,10 @@ export default {
           handler: 'table'
         }
       });
+      Event.emit('insert_handler', {
+        emit: 'client.component.show',
+        type: 'table',
+      })
     },
     mousemove (e) {
       this.mousemoveHandler(e);

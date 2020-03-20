@@ -38,6 +38,11 @@ export default {
           handler: 'form'
         }
       });
+
+      Event.emit('insert_handler', {
+        emit: 'client.component.show',
+        type: 'form',
+      })
     },
     change () {
       this.isActive = true;

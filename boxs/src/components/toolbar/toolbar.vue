@@ -195,7 +195,6 @@ export default {
       }
     },
     sureHandler (id) {
-      console.log('**************' + id);
       Event.emit('pivot_operate', {
         handler: 'generator.scene.addBox',
         data: {
