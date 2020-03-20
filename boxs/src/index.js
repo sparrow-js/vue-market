@@ -7,6 +7,7 @@ import LabelBox from './components/LabelBox';
 import ComponentBox from './components/ComponentBox';
 import TableBox from './components/TableBox';
 import TableHeaderBox from './components/TableHeaderBox';
+import TableCellBox from './components/TableCellBox';
 
 import Toolbar from './components/toolbar';
 import Event from './utils/Event';
@@ -21,7 +22,8 @@ const components = {
     LabelBox,
     ComponentBox,
     TableBox,
-    TableHeaderBox
+    TableHeaderBox,
+    TableCellBox
 };
 
 const box = components;
