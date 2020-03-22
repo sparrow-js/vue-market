@@ -52,7 +52,7 @@ export default {
       const target = e.target;
       const tagName = e.target.tagName;
       if (tagName === 'TD' || tagName === 'TH' || target.classList.contains('cell')) {
-        console.log('****4567788*****', e);
+        console.log('*******', e);
       }
     });
   },
