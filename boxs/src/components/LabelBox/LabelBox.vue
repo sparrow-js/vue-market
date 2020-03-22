@@ -2,7 +2,6 @@
   <div class="label-box">
     <div class="edit-label" 
       contenteditable="true" 
-      @focus="focus" 
       @blur="blur"
     >
       {{label}}
@@ -15,9 +14,6 @@ import Event from '../../utils/Event'
 export default {
   props: ['label', 'indexcomp'],
   methods: {
-    focus () {
-      console.log('***focus****');
-    },
     blur (e) {
       Event.emit('insert_handler', {
         emit: 'client.component.insertLabel',

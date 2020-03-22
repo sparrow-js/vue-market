@@ -1,17 +1,25 @@
 <template>
   <div class="cell-box">
     <div class="edit-cell" 
-      contenteditable="true" 
-      @blur="blur"
+      contenteditable="true"
+      @focus="focus"
     >
     </div>
   </div>
 </template>
 <script>
-export default {
-  methods: {
-    blur () {
+import Event from '../../utils/Event'
 
+export default {
+  props: ['uuid'],
+  methods: {
+    focus () {
+       Event.emit('insert_handler', {
+        emit: 'client.component.insertTableComp',
+        params: {
+          uuid: this.uuid,
+        }
+      });
     }
   }
 }
