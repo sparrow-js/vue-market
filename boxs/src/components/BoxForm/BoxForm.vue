@@ -4,11 +4,6 @@
       class="toolbar"
       :class="{'block-active': isActive}"
     >
-      <!-- <span 
-        class="toolbar-icon"
-      >
-        表单
-      </span> -->
     </div>
     <slot></slot>
     <paragraph 

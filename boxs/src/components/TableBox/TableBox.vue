@@ -5,14 +5,7 @@
   >
     <div 
       class="toolbar"
-      :class="{'block-active': isActive}"
     >
-      <span 
-        class="toolbar-icon"
-        @click="toolHandler"
-      >
-        表格
-      </span>
       <el-button type="primary" size="mini">表头数据</el-button>
       <el-button type="primary" size="mini">表格数据</el-button>
     </div>
