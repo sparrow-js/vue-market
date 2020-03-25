@@ -1,6 +1,7 @@
 <template>
   <div class="form-edit" 
     @mousemove="mousemove"
+    @click="toolHandler"
   >
     <div 
       class="toolbar"
@@ -58,7 +59,7 @@ export default {
   },
   methods: {
     toolHandler () {
-      this.isActive = !this.isActive;
+      this.isActive = true;
       Event.emit('pivot_setting', {
         data: {
           type: 'box',

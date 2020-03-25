@@ -1,12 +1,11 @@
 <template>
-  <div class="form-edit">
+  <div class="form-edit" @click="toolHandler">
     <div 
       class="toolbar"
       :class="{'block-active': isActive}"
     >
       <span 
         class="toolbar-icon"
-        @click="toolHandler"
       >
         表单
       </span>
@@ -31,7 +30,7 @@ export default {
   },
   methods: {
     toolHandler () {
-      this.isActive = !this.isActive;
+      this.isActive = true;
       Event.emit('pivot_setting', {
         data: {
           type: 'box',
@@ -45,13 +44,13 @@ export default {
       })
     },
     change () {
-      this.isActive = true;
-      Event.emit('pivot_setting', {
-        data: {
-          type: 'box',
-          handler: 'form'
-        }
-      });
+      // this.isActive = true;
+      // Event.emit('pivot_setting', {
+      //   data: {
+      //     type: 'box',
+      //     handler: 'form'
+      //   }
+      // });
     }
   }
 }
