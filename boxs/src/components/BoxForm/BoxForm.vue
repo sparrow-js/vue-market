@@ -4,11 +4,11 @@
       class="toolbar"
       :class="{'block-active': isActive}"
     >
-      <span 
+      <!-- <span 
         class="toolbar-icon"
       >
         表单
-      </span>
+      </span> -->
     </div>
     <slot></slot>
     <paragraph 
@@ -59,7 +59,6 @@ export default {
 .form-edit{
   position: relative;
   padding: 24px 12px;
-  border: 1px dashed #DCDFE6;
   background: #fff;
   .toolbar{
     position: absolute;

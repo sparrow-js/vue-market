@@ -3,7 +3,13 @@
       @click="handleClickBlock"
       :class="{'block-active': isActive}"
     >
-      <slot></slot>
+      <div class="block-slot">
+        <span class="block-label" :class="{'block-label-active' : isActive}" v-if="label">
+          {{label}}
+        </span>
+        <slot></slot>
+
+      </div>
     </div>
 </template>
 <script>
@@ -12,7 +18,11 @@ export default {
   name: 'box',
   props: {
     index: Number,
-    active: Boolean
+    active: Boolean,
+    label: {
+      type: String,
+      default: ''
+    },
   },
   data () {
     return {
@@ -66,6 +76,25 @@ export default {
       border-radius: 3px;
       &-active{
         background-image: linear-gradient(17deg,rgba(243,248,255,.03) 63.45%,rgba(207,214,229,.4) 98%);
+      }
+      .block-slot{
+        border: 1px dashed #DCDFE6;
+        position: relative;
+      }
+      .block-label{
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #fff;
+        cursor: pointer;
+        background: #bdc0c7;
+        padding: 0 6px;
+        font-size: 10px;
+        line-height: 16px;
+        z-index: 10;
+      }
+      .block-label.block-label-active{
+        background: #f56c6c;
       }
     }
 </style>

@@ -3,15 +3,41 @@
     <div class="edit-cell" 
       contenteditable="true"
       @focus="focus"
+      @input="inputHandler"
     >
     </div>
   </div>
 </template>
 <script>
-import Event from '../../utils/Event'
+import Event from '../../utils/Event';
+
+function throttle(fn, threshhold) {
+  var timeout
+  var start = new Date;
+  var threshhold = threshhold || 160
+  return function () {
+
+  var context = this, args = arguments, curr = new Date() - 0
+ 
+  clearTimeout(timeout)
+  if(curr - start >= threshhold){ 
+    fn.apply(context, args)
+    start = curr
+  }else{
+     timeout = setTimeout(function(){
+        fn.apply(context, args) 
+     }, threshhold);
+    }
+  }
+}
 
 export default {
   props: ['uuid'],
+  created () {
+    this.inputHandlerMethod = throttle((e) => {
+      console.log('*******', e.srcElement.innerText)
+    });
+  },
   methods: {
     focus () {
        Event.emit('insert_handler', {
@@ -20,6 +46,9 @@ export default {
           uuid: this.uuid,
         }
       });
+    },
+    inputHandler (e) {
+      this.inputHandlerMethod(e);
     }
   }
 }

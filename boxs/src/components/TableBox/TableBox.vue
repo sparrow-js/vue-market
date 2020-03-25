@@ -81,7 +81,6 @@ export default {
 .form-edit{
   position: relative;
   padding: 48px 12px 24px;
-  border: 1px dashed #DCDFE6;
   background: #fff;
   .toolbar{
     position: absolute;
