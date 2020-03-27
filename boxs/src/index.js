@@ -8,6 +8,7 @@ import ComponentBox from './components/ComponentBox';
 import TableBox from './components/TableBox';
 import TableHeaderBox from './components/TableHeaderBox';
 import TableCellBox from './components/TableCellBox';
+import CustomInline from './components/CustomInline';
 
 import Toolbar from './components/toolbar';
 import Event from './utils/Event';
@@ -23,7 +24,8 @@ const components = {
     ComponentBox,
     TableBox,
     TableHeaderBox,
-    TableCellBox
+    TableCellBox,
+    CustomInline
 };
 
 const box = components;
