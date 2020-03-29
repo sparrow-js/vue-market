@@ -2,8 +2,6 @@
   <div @click="boxClickHandler" class="edit">
     <slot></slot>
     <paragraph 
-      type="form" 
-      emit="client.component.show" 
       @change="change"
     ></paragraph>
   </div>
