@@ -6,18 +6,19 @@
     >
       {{label}}
     </div>
-    <!-- <div class="operate operate-add-column"><font-awesome-icon :icon="iconPlusCircle" /></div>
-    <div class="operate operate-add-row"><font-awesome-icon :icon="iconPlusCircle" /></div> -->
   </div>
 </template>
 <script>
+import Event from '../../utils/Event'
+
 // grip-horizontal plus-circle
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+
 import { 
   faPlusCircle,
 } from '@fortawesome/free-solid-svg-icons'
 export default {
-  props: ['label'],
+  props: ['label', 'uuid'],
   components: {
     FontAwesomeIcon
   },
@@ -27,8 +28,14 @@ export default {
     }
   },
   methods: {
-    blur () {
-
+    blur (e) {
+      Event.emit('insert_handler', {
+        emit: 'client.component.insertTableHeader',
+        params: {
+          uuid: this.uuid,
+          value: e.target.innerText || ''
+        }
+      })
     }
   }
 }
