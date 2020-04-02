@@ -1,8 +1,9 @@
 <template>
-  <div class="cell-box">
+  <div class="cell-box" :class="{'focus-cell-box': focusCellBox}">
     <div class="edit-cell" 
       contenteditable="true"
       @focus="focus"
+      @blur="blur"
       @input="inputHandler"
     >
     </div>
@@ -33,6 +34,11 @@ function throttle(fn, threshhold) {
 
 export default {
   props: ['uuid'],
+  data () {
+    return {
+      focusCellBox: false
+    };
+  },
   created () {
     this.inputHandlerMethod = throttle((e) => {
       console.log('*******', e.srcElement.innerText)
@@ -40,12 +46,16 @@ export default {
   },
   methods: {
     focus () {
+      this.focusCellBox = true;
        Event.emit('insert_handler', {
         emit: 'client.component.insertTableComp',
         params: {
           uuid: this.uuid,
         }
       });
+    },
+    blur () {
+      this.focusCellBox = false;
     },
     inputHandler (e) {
       this.inputHandlerMethod(e);
@@ -59,10 +69,15 @@ export default {
   flex-direction: row;
   position: relative;
   padding: 5px;
+  height: 34px;
   &:hover{
     border: 1px dashed #909399;
     background-color: #fff;
   }
+}
+.focus-cell-box{
+  border: 1px dashed #909399;
+  background-color: #fff;
 }
 .edit-cell{
   flex: 1;

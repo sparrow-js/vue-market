@@ -50,6 +50,5 @@ export default {
 }
 .is-active>div:first-child{
   border: 1px dashed #DCDFE6;
-  padding: 10px;
 }
 </style>

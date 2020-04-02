@@ -11,6 +11,7 @@ import TableCellBox from './components/TableCellBox';
 import CustomInline from './components/CustomInline';
 
 import Toolbar from './components/toolbar';
+import InlineToolbar from './components/InlineToolbar';
 import Event from './utils/Event';
 
 const components = {
@@ -25,7 +26,8 @@ const components = {
     TableBox,
     TableHeaderBox,
     TableCellBox,
-    CustomInline
+    CustomInline,
+    InlineToolbar
 };
 
 const box = components;
