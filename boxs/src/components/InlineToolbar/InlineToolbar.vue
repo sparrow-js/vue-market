@@ -1,9 +1,14 @@
 <template>
   <div class="inline-toolbar" v-show="showToolbar" :style="styles">
     <ul class="inline-toolbar__list">
-      <li class="inline-toolbar__item">按钮</li>
-      <li class="inline-toolbar__item">链接</li>
-      <li class="inline-toolbar__item">标签</li>
+      <li 
+        class="inline-toolbar__item"
+        v-for="item in toolList"
+        :key="item.value"
+        @click="toolbarItemHandler(item)"
+      >
+        <span>{{item.label}}</span>
+      </li>
     </ul>
   </div>
 </template>
@@ -16,7 +21,22 @@ export default {
       styles: {
         transform: 'translate3d(0, 0, 0)'
       },
-      showToolbar: true,
+      toolList: [
+         {
+          label: '标签',
+          value: 'tag',
+        },
+        {
+          label: '链接',
+          value: 'link',
+        },
+        {
+          label: '按钮',
+          value: 'button',
+        },
+      ],
+      showToolbar: false,
+      value: '',
     }
   },
   created () {
@@ -25,14 +45,26 @@ export default {
   },
   methods: {
     handlerShowPosition (data) {
-      const {rect, index} = data;
-      this.boxIndex = index;
+      const {rect, value} = data;
+      this.value = value;
       this.showToolbar = true;
       const scrollY = window.scrollY;
       this.styles.transform = `translate3d(${rect.left}px, ${rect.top + scrollY + 35}px, 0)`;
     },
     handlerHide () {
       this.showToolbar = false;
+    },
+    toolbarItemHandler (item) {
+      Event.emit('insert_handler', {
+        emit: 'client.component.tableCell',
+        params: {
+          key: 'TableCellText',
+          type: item.value,
+          params: {
+            value: this.value,
+          }
+        }
+      });
     }
   }
 }
