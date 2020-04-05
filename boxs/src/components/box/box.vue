@@ -34,6 +34,7 @@ export default {
   },
   beforeDestroy () {
     Event.off('block-active-change', this.handlerBlockChange);
+  
   },
   methods: {
     handleClickBlock (event) {

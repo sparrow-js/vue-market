@@ -53,7 +53,7 @@ export default {
 <style lang="scss" scoped>
 .form-edit{
   position: relative;
-  padding: 24px 12px;
+  padding: 20px 12px 0;
   background: #fff;
   .toolbar{
     position: absolute;

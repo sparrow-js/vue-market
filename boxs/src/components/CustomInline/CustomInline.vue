@@ -29,7 +29,7 @@ export default {
 <style lang="scss" scoped>
 .edit{
   position: relative;
-  padding: 20px;
+  padding: 20px 12px 0;
   background: #fff;
 }
 </style>

@@ -20,10 +20,8 @@ export default {
       activeComp: this.isActive || false
     };
   },
-  watch: {
-    isActive () {
-      this.activeComp = this.isActive;
-    }
+  created () {
+    Event.on('component-active-change', this.handlerCompChange);
   },
   components: {
     Paragraph
@@ -37,17 +35,23 @@ export default {
           handler: 'setActiveIndex',
           index: this.indexcomp,
         }
-      })
+      });
+
+      Event.emit('component-active-change', {
+        index: this.indexcomp
+      });
+    },
+    handlerCompChange (data) {
+      if (data.index === this.indexcomp) {
+        this.activeComp = true;
+      } else {
+        this.activeComp = false;
+      }
     }
   }
 }
 </script>
 <style lang="scss" scoped>
-.comp-box{
-  .el-form-item{
-    
-  }
-}
 .is-active>div:first-child{
   border: 1px dashed #DCDFE6;
 }
