@@ -11,61 +11,14 @@
             placement="bottom"
             trigger="hover"
             width="230">
-            <div v-if="item.value === 'tag'" class="list">
-              <div class="item">
-                <el-tag size="small" type="success">success</el-tag>
-              </div>
-              <div class="item">
-                <el-tag size="small" type="info">info</el-tag>
-              </div>
-              <div class="item">
-                <el-tag size="small" type="warning">warning</el-tag>
-              </div>
-              <div class="item">
-                <el-tag size="small" type="danger">danger</el-tag>
-              </div>
-            </div>
-            <div v-if="item.value === 'link'" class="list">
-              <div class="item">
-                <el-link>默认链接</el-link>
-              </div>
-              <div class="item">
-                <el-link type="primary">主要链接</el-link>
-              </div>
-              <div class="item">
-                <el-link type="success">成功链接</el-link>
-              </div>
-              <div class="item">
-                <el-link type="warning">警告链接</el-link>
-              </div>
-              <div class="item">
-                <el-link type="danger">危险链接</el-link>
-              </div>
-              <div class="item">
-                <el-link type="info">信息链接</el-link>
+            <div class="list">
+              <div class="item" v-for="(tag, tagIndex) in item.children" :key="tagIndex">
+                <el-tag v-if="item.value === 'tag'" size="small" :type="tag.value">{{tag.label}}</el-tag>
+                <el-link v-if="item.value === 'link'" size="small" :type="tag.value">{{tag.label}}</el-link>
+                <el-button v-if="item.value === 'button'" size="mini" :type="tag.value">{{tag.label}}</el-button>
               </div>
             </div>
 
-            <div v-if="item.value === 'button'" class="list">
-              <div class="item">
-                <el-button size="mini">默认按钮</el-button>
-              </div>
-              <div class="item">
-                <el-button size="mini" type="primary">主要按钮</el-button>
-              </div>
-              <div class="item">
-                <el-button size="mini" type="success">成功按钮</el-button>
-              </div>
-              <div class="item">
-                <el-button size="mini" type="info">信息按钮</el-button>
-              </div>
-              <div class="item">
-                <el-button size="mini" type="warning">警告按钮</el-button>
-              </div>
-              <div class="item">
-                <el-button size="mini" type="danger">危险按钮</el-button>
-              </div>
-            </div>
             <span slot="reference">{{item.label}}</span>
           </el-popover>
       </li>
@@ -109,28 +62,28 @@ export default {
           value: 'link',
           children: [
             {
-              label: '',
-              value: '默认链接'
+              label: '默认链接',
+              value: ''
             },
             {
-              label: 'primary',
-              value: '主要链接'
+              label: '主要链接',
+              value: 'primary'
             },
             {
-              label: 'success',
-              value: '成功链接'
+              label: '成功链接',
+              value: 'success'
             },
             {
-              label: 'warning',
-              value: '警告链接'
+              label: '警告链接',
+              value: 'warning'
             },
             {
-              label: 'danger',
-              value: '危险链接'
+              label: '危险链接',
+              value: 'danger'
             },
             {
-              label: 'info',
-              value: '信息链接'
+              label: '信息链接',
+              value: 'info'
             }
           ]
         },
@@ -139,28 +92,28 @@ export default {
           value: 'button',
            children: [
             {
-              label: '',
-              value: '默认按钮'
+              label: '默认按钮',
+              value: ''
             },
             {
-              label: 'primary',
-              value: '主要按钮'
+              label: '主要按钮',
+              value: 'primary'
             },
             {
-              label: 'success',
-              value: '成功按钮'
+              label: '成功按钮',
+              value: 'success'
             },
             {
-              label: 'warning',
-              value: '信息按钮'
+              label: '信息按钮',
+              value: 'warning'
             },
             {
-              label: 'danger',
-              value: '警告按钮'
+              label: '警告按钮',
+              value: 'danger'
             },
             {
-              label: 'info',
-              value: '危险按钮'
+              label: '危险按钮',
+              value: 'info'
             }
           ]
         },
