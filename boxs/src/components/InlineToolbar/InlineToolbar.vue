@@ -5,7 +5,6 @@
         class="inline-toolbar__item"
         v-for="item in toolList"
         :key="item.value"
-        @click="toolbarItemHandler(item)"
       >
          <el-popover
             placement="bottom"
@@ -13,9 +12,24 @@
             width="230">
             <div class="list">
               <div class="item" v-for="(tag, tagIndex) in item.children" :key="tagIndex">
-                <el-tag v-if="item.value === 'tag'" size="small" :type="tag.value">{{tag.label}}</el-tag>
-                <el-link v-if="item.value === 'link'" size="small" :type="tag.value">{{tag.label}}</el-link>
-                <el-button v-if="item.value === 'button'" size="mini" :type="tag.value">{{tag.label}}</el-button>
+                <el-tag 
+                  v-if="item.value === 'tag'" 
+                  size="small" 
+                  :type="tag.value"
+                  @click="toolbarItemHandler(item,tag)"
+                >{{tag.label}}</el-tag>
+                <el-link 
+                  v-if="item.value === 'link'" 
+                  size="small" 
+                  :type="tag.value"
+                  @click="toolbarItemHandler(item,tag)"
+                >{{tag.label}}</el-link>
+                <el-button 
+                  v-if="item.value === 'button'" 
+                  size="mini" 
+                  :type="tag.value"
+                  @click="toolbarItemHandler(item,tag)"
+                >{{tag.label}}</el-button>
               </div>
             </div>
 
@@ -137,7 +151,8 @@ export default {
     handlerHide () {
       this.showToolbar = false;
     },
-    toolbarItemHandler (item) {
+    toolbarItemHandler (item, tag) {
+      this.showToolbar = false;
       Event.emit('insert_handler', {
         emit: 'client.component.tableCell',
         params: {
@@ -145,6 +160,7 @@ export default {
           type: item.value,
           params: {
             value: this.value,
+            tagType: tag.value,
           }
         }
       });
