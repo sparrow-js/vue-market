@@ -13,7 +13,8 @@ export default {
       type: Boolean,
       default: false
     },
-    indexcomp: Number|String
+    indexcomp: Number|String,
+    uuid: String
   },
   data () {
     return {
@@ -29,20 +30,20 @@ export default {
   methods: {
     clickHandler () {
       this.activeComp = true;
-        Event.emit('insert_handler', {
-        emit: 'forward.generator.scene.setting',
+      Event.emit('insert_handler', {
+        emit: 'client.component.getConfig',
         params: {
           handler: 'setActiveIndex',
-          index: this.indexcomp,
+          uuid: this.uuid
         }
       });
 
       Event.emit('component-active-change', {
-        index: this.indexcomp
+        uuid: this.uuid
       });
     },
     handlerCompChange (data) {
-      if (data.index === this.indexcomp) {
+      if (data.uuid === this.uuid) {
         this.activeComp = true;
       } else {
         this.activeComp = false;
