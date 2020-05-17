@@ -54,6 +54,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 .is-active>div:first-child{
-  border: 1px dashed #DCDFE6;
+  outline: 1px dashed #DCDFE6;
 }
 </style>

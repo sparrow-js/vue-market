@@ -1,6 +1,6 @@
 {
     "name": "@sparrow-vue/boxs",
-    "version": "1.0.1",
+    "version": "1.0.5",
     "title": "sparrow",
     "description": "vue box",
     "keywords": [
@@ -37,6 +37,7 @@
         "@fortawesome/fontawesome-svg-core": "^1.2.26",
         "@fortawesome/free-solid-svg-icons": "^5.12.0",
         "@fortawesome/vue-fontawesome": "^0.1.9",
+        "@sparrow-vue/sparrow-utils": "^1.0.0",
         "async-validator": "^1.12.2",
         "deepmerge": "^2.2.1",
         "element-resize-detector": "^1.2.0",
@@ -44,6 +45,7 @@
         "js-calendar": "^1.2.3",
         "lodash.throttle": "^4.1.1",
         "popper.js": "^1.14.6",
+        "sparrow-utils": "^1.2.0",
         "tinycolor2": "^1.4.1",
         "v-click-outside-x": "^4.0.19",
         "vue-codemirror": "^4.0.6"
