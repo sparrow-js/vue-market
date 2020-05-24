@@ -12,14 +12,15 @@
 import Event from '../../utils/Event'
 
 export default {
-  props: ['label', 'indexcomp'],
+  props: ['label', 'indexcomp', 'uuid'],
   methods: {
     blur (e) {
       Event.emit('insert_handler', {
         emit: 'client.component.insertLabel',
         params: {
           index: this.indexcomp,
-          value: e.target.innerText || ''
+          value: e.target.innerText || '',
+          uuid: this.uuid
         }
       })
     }

@@ -47,7 +47,7 @@ export default {
   methods: {
     focus () {
       this.focusCellBox = true;
-       Event.emit('insert_handler', {
+      Event.emit('insert_handler', {
         emit: 'client.component.insertTableComp',
         params: {
           uuid: this.uuid,

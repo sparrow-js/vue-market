@@ -1,5 +1,5 @@
 <template>
-  <div class="form-edit" @click="toolHandler">
+  <div class="form-edit" @click.capture="toolHandler">
     <div 
       class="toolbar"
       :class="{'block-active': isActive}"

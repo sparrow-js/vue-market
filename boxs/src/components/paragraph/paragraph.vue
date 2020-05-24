@@ -24,7 +24,7 @@ export default {
   },
   methods: {
     focus () {
-      if (this.type) {
+      if (this.type && this.emit) {
         Event.emit('insert_handler', {
           emit: this.emit,
           type: this.type,

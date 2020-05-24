@@ -14,7 +14,11 @@ export default {
       default: false
     },
     indexcomp: Number|String,
-    uuid: String
+    uuid: String,
+    isInline: {
+      type: Boolean,
+      default: false
+    }
   },
   data () {
     return {
@@ -53,7 +57,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.is-active>div:first-child{
+.is-active{
   outline: 1px dashed #DCDFE6;
 }
 </style>

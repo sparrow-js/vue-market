@@ -17,7 +17,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .block-edit{
-  border: 1px dashed #dcdfe6;
+  outline: 1px dashed #dcdfe6;
   background-color: #fff;
 }
 </style>

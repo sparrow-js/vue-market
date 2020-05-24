@@ -9,6 +9,9 @@ import TableBox from './components/TableBox';
 import TableHeaderBox from './components/TableHeaderBox';
 import TableCellBox from './components/TableCellBox';
 import CustomInline from './components/CustomInline';
+import  LogicBox from './components/LogicBox';
+import ArrayListBox from './components/ArrayListBox';
+import TabsBox from './components/TabsBox';
 
 import Toolbar from './components/toolbar';
 import InlineToolbar from './components/InlineToolbar';
@@ -26,6 +29,10 @@ const components = {
     TableBox,
     TableHeaderBox,
     TableCellBox,
+    LogicBox,
+    ArrayListBox,
+    TabsBox,
+    
     CustomInline,
     InlineToolbar
 };
