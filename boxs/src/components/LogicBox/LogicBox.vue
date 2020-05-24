@@ -41,5 +41,6 @@ export default {
 .Logic{
   outline: 1px dashed #DCDFE6;
   padding: 5px;
+  margin: 1px;
 }
 </style>

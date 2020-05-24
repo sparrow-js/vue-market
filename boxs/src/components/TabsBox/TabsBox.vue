@@ -1,5 +1,5 @@
 <template>
-  <el-tabs v-model="activeName" @tab-click="handleClick">
+  <el-tabs v-model="active" @tab-click="handleClick">
     <el-tab-pane
       v-for="item in list"
       :key="item.value"
@@ -11,6 +11,9 @@
   </el-tabs>
 </template>
 <script>
+  import Event from '../../utils/Event'
+
+
   export default {
     props: {
       list: {
@@ -19,10 +22,44 @@
           return [];
         }
       },
-      activeName: String | Number
+      activeName: String | Number,
+      uuid: String,
+    },
+    data () {
+      return {
+        active: this.activeName
+      }
+    },
+    watch: {
+      activeName () {
+        this.active = this.activeName;
+      }
     },
     methods: {
       handleClick(tab, event) {
+        /**
+         * 
+        const result = await socket.emit('generator.scene.setting', {
+          boxIndex: AppModule.boxIndex,
+          data: {
+            handler: 'formInline',
+            key: ':inline',
+            value: this.setting.inline
+          }
+        });
+         */
+
+        Event.emit('pivot_operate', {
+          handler: 'generator.scene.settingConfig',
+          data: {
+            uuid: this.uuid,
+            handler: 'setActive',
+            params: {
+              activeName: this.active
+            }
+          }
+        });
+        console.log('********',this.active);
         console.log(tab, event);
       }
     }
