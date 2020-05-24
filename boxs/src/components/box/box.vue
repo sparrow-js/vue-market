@@ -8,7 +8,6 @@
           {{label}}
         </span>
         <slot></slot>
-
       </div>
     </div>
 </template>

@@ -37,18 +37,6 @@
     },
     methods: {
       handleClick(tab, event) {
-        /**
-         * 
-        const result = await socket.emit('generator.scene.setting', {
-          boxIndex: AppModule.boxIndex,
-          data: {
-            handler: 'formInline',
-            key: ':inline',
-            value: this.setting.inline
-          }
-        });
-         */
-
         Event.emit('pivot_operate', {
           handler: 'generator.scene.settingConfig',
           data: {
@@ -59,8 +47,6 @@
             }
           }
         });
-        console.log('********',this.active);
-        console.log(tab, event);
       }
     }
   };
