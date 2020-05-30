@@ -1,14 +1,16 @@
 <template>
-  <el-tabs v-model="active" @tab-click="handleClick">
-    <el-tab-pane
-      v-for="item in list"
-      :key="item.value"
-      :label="item.label" 
-      :name="item.value"
-    >
-      <slot :name="`tab_${item.value}`"/>
-    </el-tab-pane>
-  </el-tabs>
+  <div @click.capture="change">
+    <el-tabs v-model="active" @tab-click="handleClick">
+      <el-tab-pane
+        v-for="item in list"
+        :key="item.value"
+        :label="item.label" 
+        :name="item.value"
+      >
+        <slot :name="`tab_${item.value}`"/>
+      </el-tab-pane>
+    </el-tabs>
+  </div>
 </template>
 <script>
   import Event from '../../utils/Event'
@@ -45,6 +47,15 @@
             params: {
               activeName: this.active
             }
+          }
+        });
+      },
+      change () {
+        Event.emit('insert_handler', {
+          emit: 'client.component.getConfig',
+          params: {
+            handler: 'setActiveIndex',
+            uuid: this.uuid
           }
         });
       }

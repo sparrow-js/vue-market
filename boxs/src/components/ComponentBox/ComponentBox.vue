@@ -1,5 +1,5 @@
 <template>
-  <div class="comp-box" :class="{'is-active': activeComp}" @click="clickHandler">
+  <div class="comp-box" :class="{'is-active': activeComp}" @click.capture="clickHandler">
     <slot></slot>
   </div>
 </template>
