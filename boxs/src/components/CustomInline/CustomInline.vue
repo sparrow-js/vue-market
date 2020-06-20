@@ -10,6 +10,9 @@
 import Event from '../../utils/Event';
 
 export default {
+  props: {
+    compBox: String
+  },
   methods: {
     change () {
 
@@ -19,7 +22,7 @@ export default {
         emit: 'client.component.show',
         type: 'custominline',
         params: {
-          compBox: 'BasicTable'
+          compBox: this.compBox
         }
       })
     }
@@ -29,7 +32,7 @@ export default {
 <style lang="scss" scoped>
 .edit{
   position: relative;
-  padding: 20px 12px 0;
+  padding: 10px 6px 0;
   background: #fff;
 }
 </style>

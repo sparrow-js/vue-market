@@ -26,6 +26,10 @@
       },
       activeName: String | Number,
       uuid: String,
+      status: {
+        type: String,
+        default: ''
+      }
     },
     data () {
       return {
@@ -51,13 +55,28 @@
         });
       },
       change () {
-        Event.emit('insert_handler', {
-          emit: 'client.component.getConfig',
-          params: {
-            handler: 'setActiveIndex',
-            uuid: this.uuid
-          }
-        });
+        if (this.status === 'box') {
+          Event.emit('pivot_setting', {
+            data: {
+              type: 'box',
+              handler: 'tabs'
+            }
+          });
+
+          Event.emit('insert_handler', {
+            emit: 'client.component.show',
+            type: 'Empty',
+          })
+        } else {
+          Event.emit('insert_handler', {
+            emit: 'client.component.getConfig',
+            params: {
+              handler: 'setActiveIndex',
+              uuid: this.uuid
+            }
+          });
+        }
+    
       }
     }
   };

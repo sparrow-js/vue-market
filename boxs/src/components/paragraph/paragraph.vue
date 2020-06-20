@@ -1,10 +1,6 @@
 <template>
   <div class="paragraph">
-    <div class="paragraph-edit" contenteditable="true" @focus="focus"></div>
-    <div class="operate-box" v-if="false">
-      <span>编辑</span>
-      <span>删除</span>
-    </div>
+    <div class="paragraph-edit" contenteditable="true" @click.capture="focus"></div>
     <slot></slot>
   </div>
 </template>
@@ -24,7 +20,7 @@ export default {
   },
   methods: {
     focus () {
-      if (this.type && this.emit) {
+      if (this.type) {
         Event.emit('insert_handler', {
           emit: this.emit,
           type: this.type,
@@ -34,13 +30,15 @@ export default {
       this.$emit('change', {
         type: 'focus'
       })
+    },
+    click () {
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 .paragraph{
-  height: 48px;
+  height: 32px;
   box-sizing: border-box;
   padding: 5px;
   &-edit{

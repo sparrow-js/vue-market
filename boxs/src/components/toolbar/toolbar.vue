@@ -29,11 +29,11 @@
               <el-input  class="toolbar__box-layout-input" v-model="form.col" size="mini" placeholder="col"></el-input>
               <el-button size="mini" type="primary" round @click="layoutSure(item.id)">确定</el-button>
             </div>
-            <span slot="reference">{{item.name}}</span>
+            <span slot="reference">{{item.label}}</span>
           </el-popover>
 
            <el-popover
-            v-if="item.id === 'form'"
+            v-if="item.id === 'Form'"
             placement="bottom"
             trigger="hover"
             width="170">
@@ -46,11 +46,11 @@
               ></el-input>
               <el-button size="mini" type="primary" round @click="sureHandler(item.id)">确定</el-button>
             </div>
-            <span slot="reference">{{item.name}}</span>
+            <span slot="reference">{{item.label}}</span>
           </el-popover>
 
           <el-popover
-            v-if="item.id === 'table'"
+            v-if="item.id === 'Table'"
             placement="bottom"
             trigger="hover"
             width="230">
@@ -64,9 +64,9 @@
               <el-input  class="toolbar__box-layout-input" v-model="form.col" size="mini" placeholder="col"></el-input>
               <el-button size="mini" type="primary" round @click="sureHandler(item.id)">确定</el-button>
             </div>
-            <span slot="reference">{{item.name}}</span>
+            <span slot="reference">{{item.label}}</span>
           </el-popover>
-          <span v-if="!['form', 'layout', 'table'].includes(item.id)">{{item.name}}</span>
+          <span v-if="!['Form', 'Layout', 'Table'].includes(item.id)">{{item.label}}</span>
         </li>
       </ul>
     </div>
@@ -183,7 +183,7 @@ export default {
       this.showActions = !this.showActions;
     },
     boxHandler (id) {
-      if (id === 'block') {
+      if (!['Form', 'Layout', 'Table'].includes(id)) {
         Event.emit('pivot_operate', {
           handler: 'generator.scene.addBox',
           data: {
@@ -241,7 +241,7 @@ export default {
   left: 0;
   top: 0;
   width: 0;
-  z-index: 100;
+  z-index: 10000;
   &__box-add{
     font-size: 18px;
     position: absolute;

@@ -1,6 +1,6 @@
 <template>
     <div class="block" 
-      @click="handleClickBlock"
+      @click.capture="handleClickBlock"
       :class="{'block-active': isActive}"
     >
       <div class="block-slot">
@@ -17,6 +17,7 @@ export default {
   name: 'box',
   props: {
     index: Number,
+    uuid: String,
     active: Boolean,
     label: {
       type: String,
@@ -38,19 +39,21 @@ export default {
   methods: {
     handleClickBlock (event) {
       Event.emit('block-active-change', {
-        index: this.index
+        index: this.index,
+        uuid: this.uuid
       });
       const currentBlock = this.findBlock(event.target);
       const rect = currentBlock ? currentBlock.getBoundingClientRect() : null; 
       if (rect) {
         Event.emit('block-selected', {
           rect,
-          index: this.index
+          index: this.index,
+          uuid: this.uuid
         })
       }
     },
     handlerBlockChange (data) {
-      if (data.index === this.index) {
+      if (data.uuid === this.uuid) {
         this.isActive = true;
       } else {
         this.isActive = false;
@@ -80,6 +83,7 @@ export default {
       .block-slot{
         outline: 1px dashed #DCDFE6;
         position: relative;
+        padding: 20px 8px 8px;
       }
       .block-label{
         position: absolute;

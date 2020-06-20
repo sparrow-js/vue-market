@@ -7,8 +7,6 @@
     </div>
     <slot></slot>
     <paragraph 
-      type="form" 
-      emit="client.component.show" 
       @change="change"
     ></paragraph>
   </div>
@@ -38,22 +36,14 @@ export default {
         type: 'form',
       })
     },
-    change () {
-      // this.isActive = true;
-      // Event.emit('pivot_setting', {
-      //   data: {
-      //     type: 'box',
-      //     handler: 'form'
-      //   }
-      // });
-    }
+    change () {}
   }
 }
 </script>
 <style lang="scss" scoped>
 .form-edit{
   position: relative;
-  padding: 20px 12px 0;
+  padding: 5px 6px 0;
   background: #fff;
   .toolbar{
     position: absolute;

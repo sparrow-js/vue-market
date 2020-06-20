@@ -1,7 +1,7 @@
 <template>
   <div class="form-edit" 
     @mousemove="mousemove"
-    @click="toolHandler"
+    @click.capture="toolHandler"
   >
     <slot></slot>
   </div>
