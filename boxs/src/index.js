@@ -13,6 +13,7 @@ import  LogicBox from './components/LogicBox';
 import ArrayListBox from './components/ArrayListBox';
 import TabsBox from './components/TabsBox';
 import ContainerBox from './components/ContainerBox';
+import ConfigBox from './components/ConfigBox';
 
 import Toolbar from './components/toolbar';
 import InlineToolbar from './components/InlineToolbar';
@@ -34,6 +35,7 @@ const components = {
     ArrayListBox,
     TabsBox,
     ContainerBox,
+    ConfigBox,
     
     CustomInline,
     InlineToolbar
