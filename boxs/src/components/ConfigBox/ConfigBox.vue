@@ -34,7 +34,6 @@
     },
     methods: {
       change () {
-        console.log('*******8*******');
         Event.emit('pivot_setting', {
           data: {
             type: 'box',
