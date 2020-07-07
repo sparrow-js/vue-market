@@ -3,6 +3,7 @@
     <div class="edit-label" 
       contenteditable="true" 
       @blur="blur"
+      @click="clickHandler"
     >
       {{label}}
     </div>
@@ -36,6 +37,14 @@ export default {
           value: e.target.innerText || ''
         }
       })
+    },
+    clickHandler () {
+       Event.emit('insert_handler', {
+        emit: 'client.component.getConfig',
+        params: {
+          uuid: this.uuid
+        }
+      });
     }
   }
 }

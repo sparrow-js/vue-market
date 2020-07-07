@@ -18,9 +18,11 @@ const fetchPackages = async () => {
   await Promise.all(
     blockNames.map(async name => {
       const result = await fetchPackage(name);
+      result.blockConfig.screenshot = `https://unpkg.com/${result.name}@${result.version}/snapshot.png`
       packages.push(result);
     })
   );
+  
   return packages;
 }
 

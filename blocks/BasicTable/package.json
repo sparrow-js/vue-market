@@ -1,11 +1,12 @@
 {
   "name": "@sparrow-vue/basic-table-block",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "基础表格",
   "author": "",
   "files": [
     "src/",
-    "lib/"
+    "lib/",
+    "snapshot.png"
   ],
   "repository": {
     "type": "git",

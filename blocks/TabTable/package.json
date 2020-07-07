@@ -1,11 +1,12 @@
 {
   "name": "@sparrow-vue/tab-table-block",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "基于element的标签页表格组合",
   "author": "",
   "files": [
     "src/",
-    "lib/"
+    "lib/",
+    "snapshot.png"
   ],
   "repository": {
     "type": "git",

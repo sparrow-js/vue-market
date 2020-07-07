@@ -5,6 +5,7 @@
       @focus="focus"
       @blur="blur"
       @input="inputHandler"
+       @click="clickHandler"
     >
     </div>
   </div>
@@ -53,12 +54,23 @@ export default {
           uuid: this.uuid,
         }
       });
+      
+
+
     },
     blur () {
       this.focusCellBox = false;
     },
     inputHandler (e) {
       this.inputHandlerMethod(e);
+    },
+    clickHandler () {
+      Event.emit('insert_handler', {
+        emit: 'client.component.getConfig',
+        params: {
+          uuid: this.uuid
+        }
+      });
     }
   }
 }
