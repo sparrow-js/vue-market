@@ -1,5 +1,5 @@
 <template>
-  <div @click.capture="change">
+  <div @click="change">
     <slot></slot>
   </div>
 </template>
@@ -33,19 +33,7 @@
       }
     },
     methods: {
-      change () {
-        Event.emit('pivot_setting', {
-          data: {
-            type: 'box',
-            handler: 'common'
-          }
-        });
-
-        Event.emit('insert_handler', {
-          emit: 'client.component.show',
-          type: 'Empty',
-        })
-      }
+      change () {}
     }
   };
 </script>

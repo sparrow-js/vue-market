@@ -14,8 +14,8 @@ import ArrayListBox from './components/ArrayListBox';
 import TabsBox from './components/TabsBox';
 import ContainerBox from './components/ContainerBox';
 import ConfigBox from './components/ConfigBox';
+import EditTextBox from './components/EditTextBox';
 
-import Toolbar from './components/toolbar';
 import InlineToolbar from './components/InlineToolbar';
 import Event from './utils/Event';
 
@@ -25,7 +25,6 @@ const components = {
     Paragraph,
     Block,
     BoxForm,
-    Toolbar,
     LabelBox,
     ComponentBox,
     TableBox,
@@ -36,6 +35,7 @@ const components = {
     TabsBox,
     ContainerBox,
     ConfigBox,
+    EditTextBox,
     
     CustomInline,
     InlineToolbar

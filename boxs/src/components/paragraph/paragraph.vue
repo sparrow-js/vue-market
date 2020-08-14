@@ -1,6 +1,6 @@
 <template>
   <div class="paragraph">
-    <div class="paragraph-edit" contenteditable="true" @click.capture="focus"></div>
+    <div class="paragraph-edit" contenteditable="true" @click="focus"></div>
     <slot></slot>
   </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div @click.capture="change">
+  <div @click.stop="change">
     <el-tabs v-model="active" @tab-click="handleClick">
       <el-tab-pane
         v-for="item in list"
@@ -42,42 +42,8 @@
       }
     },
     methods: {
-      handleClick(tab, event) {
-        Event.emit('pivot_operate', {
-          handler: 'generator.scene.settingConfig',
-          data: {
-            uuid: this.uuid,
-            handler: 'setActive',
-            params: {
-              activeName: this.active
-            }
-          }
-        });
-      },
-      change () {
-        if (this.status === 'box') {
-          Event.emit('pivot_setting', {
-            data: {
-              type: 'box',
-              handler: 'tabs'
-            }
-          });
-
-          Event.emit('insert_handler', {
-            emit: 'client.component.show',
-            type: 'Empty',
-          })
-        } else {
-          Event.emit('insert_handler', {
-            emit: 'client.component.getConfig',
-            params: {
-              handler: 'setActiveIndex',
-              uuid: this.uuid
-            }
-          });
-        }
-    
-      }
+      handleClick(tab, event) {},
+      change () {}
     }
   };
 </script>

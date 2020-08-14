@@ -1,17 +1,14 @@
 <template>
-  <div class="Logic" @click.capture="change">
+  <div class="Logic" @click.stop="change">
     <span 
       class="Logic-label" 
       :class="{'Logic-label-active' : activeComp}"
       v-if="label"
     >
+    
       {{label}}
     </span>
     <slot></slot>
-    <!-- <paragraph 
-      type="logic" 
-      @change="change"
-    ></paragraph> -->
   </div>
 </template>
 <script>
@@ -49,7 +46,6 @@ export default {
       Event.emit('insert_handler', {
         emit: 'client.component.getConfig',
         params: {
-          handler: 'setActiveIndex',
           uuid: this.uuid
         }
       });

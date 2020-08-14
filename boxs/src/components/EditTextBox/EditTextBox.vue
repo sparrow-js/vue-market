@@ -1,15 +1,16 @@
 <template>
   <div :class="{
-    'label-box': !this.clearClass
+    'text-box': !this.clearClass
   }">
     <div :class="{
-      'edit-label': !this.clearClass,
-      'edit-label-init': this.clearClass
+      'edit-text': !this.clearClass,
+      'edit-text-init': this.clearClass
     }" 
       contenteditable="true" 
       @blur="blur"
     >
       {{label}}
+      <slot />
     </div>
   </div>
 </template>
@@ -21,7 +22,7 @@ export default {
   methods: {
     blur (e) {
       Event.emit('insert_handler', {
-        emit: 'client.component.insertLabel',
+        emit: 'client.component.insertEditText',
         params: {
           value: e.target.innerText || '',
           uuid: this.uuid
@@ -32,12 +33,12 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .label-box{
+  .text-box{
+    min-width: 80px;
     box-sizing: border-box;
     overflow: hidden;
   }
-  .edit-label{
-    text-align: right;
+  .edit-text{
     vertical-align: middle;
     font-size: 14px;
     color: #606266;
@@ -45,12 +46,9 @@ export default {
     outline: none;
     white-space:nowrap;
   }
-  .edit-label-init{
+  .edit-text-init{
     vertical-align: middle;
-    font-size: 14px;
-    color: #606266;
     padding: 0 12px 0 0;
-    outline: none;
-    white-space:nowrap;
+    outline: none;    
   }
 </style>

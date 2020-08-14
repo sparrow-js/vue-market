@@ -1,6 +1,6 @@
 <template>
     <div class="block" 
-      @click.capture="handleClickBlock"
+      @click.stop="handleClickBlock"
       :class="{'block-active': isActive}"
     >
       <div class="block-slot">
@@ -42,6 +42,13 @@ export default {
         index: this.index,
         uuid: this.uuid
       });
+
+      Event.emit('insert_handler', {
+        emit: 'client.dispatch.box',
+        params: {
+          uuid: this.uuid
+        }
+      });
       const currentBlock = this.findBlock(event.target);
       const rect = currentBlock ? currentBlock.getBoundingClientRect() : null; 
       if (rect) {
@@ -75,7 +82,7 @@ export default {
 </script>
 <style lang="scss" scoped>
     .block{
-      padding: 8px 30px;
+      padding: 5px;
       border-radius: 3px;
       &-active{
         background-image: linear-gradient(17deg,rgba(243,248,255,.03) 63.45%,rgba(207,214,229,.4) 98%);
@@ -83,7 +90,10 @@ export default {
       .block-slot{
         outline: 1px dashed #DCDFE6;
         position: relative;
-        padding: 20px 8px 8px;
+        padding: 16px 8px 8px;
+      }
+      .block-slot:hover .block-label{
+        display: block;
       }
       .block-label{
         position: absolute;
@@ -96,9 +106,15 @@ export default {
         font-size: 10px;
         line-height: 16px;
         z-index: 10;
+        display: none;
       }
+
       .block-label.block-label-active{
-        background: #f56c6c;
+        background: #409EFF;
       }
+
+    }
+    .block-active .block-label{
+      display: block;
     }
 </style>

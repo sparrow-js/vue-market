@@ -1,7 +1,7 @@
 <template>
   <div class="form-edit" 
     @mousemove="mousemove"
-    @click.capture="toolHandler"
+    @click="toolHandler"
   >
     <slot></slot>
   </div>
@@ -44,18 +44,7 @@ export default {
     });
   },
   methods: {
-    toolHandler () {
-      Event.emit('pivot_setting', {
-        data: {
-          type: 'box',
-          handler: 'table'
-        }
-      });
-      Event.emit('insert_handler', {
-        emit: 'client.component.show',
-        type: 'table',
-      })
-    },
+    toolHandler () {},
     mousemove (e) {
       this.mousemoveHandler(e);
     },

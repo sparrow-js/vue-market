@@ -1,11 +1,16 @@
 <template>
-  <div class="comp-box" :class="{'is-active': activeComp}" @click.capture="clickHandler">
+  <div 
+    :data-id="uuid" 
+    class="comp-box" 
+    :class="{'is-active': activeComp, 'inline-box': isInline}" 
+    @click.stop="clickHandler"
+  >
     <slot></slot>
   </div>
 </template>
 <script>
 import Paragraph from '../paragraph';
-import Event from '../../utils/Event'
+import Event from '../../utils/Event';
 
 export default {
   props: {
@@ -34,14 +39,17 @@ export default {
   methods: {
     clickHandler () {
       this.activeComp = true;
-      Event.emit('insert_handler', {
-        emit: 'client.component.getConfig',
-        params: {
-          handler: 'setActiveIndex',
-          uuid: this.uuid
-        }
-      });
+      setTimeout(() => {
+        
+        Event.emit('insert_handler', {
+          emit: 'client.dispatch.component',
+          params: {
+            uuid: this.uuid
+          }
+        });
 
+      }, 200);
+     
       Event.emit('component-active-change', {
         uuid: this.uuid
       });
@@ -57,7 +65,11 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
+.comp-box{}
 .is-active{
   outline: 1px dashed #DCDFE6;
+}
+.inline-box{
+  display: inline-block;
 }
 </style>
