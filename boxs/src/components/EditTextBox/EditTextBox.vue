@@ -8,6 +8,7 @@
     }" 
       contenteditable="true" 
       @blur="blur"
+      @paste="paste"
     >
       {{label}}
       <slot />
@@ -15,19 +16,27 @@
   </div>
 </template>
 <script>
-import Event from '../../utils/Event'
+import Event from '../../utils/Event';
 
 export default {
-  props: ['label', 'uuid', 'clearClass'],
+  props: ['label', 'uuid', 'clearClass', 'customKey'],
   methods: {
     blur (e) {
       Event.emit('insert_handler', {
         emit: 'client.component.insertEditText',
         params: {
           value: e.target.innerText || '',
-          uuid: this.uuid
+          uuid: this.uuid,
+          key: this.customKey,
         }
       })
+    },
+    paste (e) {
+      Event.emit('insert_handler', {
+        emit: 'client.component.paste',
+        params: {}
+      })
+      console.log('*******789*******', e);
     }
   }
 }
