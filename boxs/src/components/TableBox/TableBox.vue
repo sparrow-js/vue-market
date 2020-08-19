@@ -1,5 +1,5 @@
 <template>
-  <div class="form-edit" 
+  <div 
     @mousemove="mousemove"
     @click="toolHandler"
   >
@@ -52,9 +52,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.form-edit{
-  position: relative;
-  padding: 24px 12px;
-  background: #fff;
-}
 </style>

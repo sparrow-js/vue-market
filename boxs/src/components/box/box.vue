@@ -92,7 +92,7 @@ export default {
         position: relative;
         padding: 16px 8px 8px;
       }
-      .block-slot:hover .block-label{
+      .block-slot:hover > .block-label{
         display: block;
       }
       .block-label{
