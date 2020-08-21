@@ -1,10 +1,9 @@
 <template>
-  <div :class="{
+  <span :class="{
     'text-box': !this.clearClass
   }">
-    <div :class="{
+    <span class="edit-text-init" :class="{
       'edit-text': !this.clearClass,
-      'edit-text-init': this.clearClass
     }" 
       contenteditable="true" 
       @blur="blur"
@@ -12,8 +11,8 @@
     >
       {{label}}
       <slot />
-    </div>
-  </div>
+    </span>
+  </span>
 </template>
 <script>
 import Event from '../../utils/Event';
@@ -36,7 +35,6 @@ export default {
         emit: 'client.component.paste',
         params: {}
       })
-      console.log('*******789*******', e);
     }
   }
 }
@@ -56,8 +54,7 @@ export default {
     white-space:nowrap;
   }
   .edit-text-init{
-    vertical-align: middle;
-    padding: 0 12px 0 0;
-    outline: none;    
+    display: inline-block;
+    min-width: 40px;
   }
 </style>

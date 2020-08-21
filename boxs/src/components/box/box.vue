@@ -82,8 +82,8 @@ export default {
 </script>
 <style lang="scss" scoped>
     .block{
-      padding: 5px;
       border-radius: 3px;
+      margin-bottom: 10px;
       &-active{
         background-image: linear-gradient(17deg,rgba(243,248,255,.03) 63.45%,rgba(207,214,229,.4) 98%);
       }
