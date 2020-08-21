@@ -1,0 +1,16 @@
+{
+  "name": "@sparrow-vue/images",
+  "version": "1.0.1",
+  "description": "基础表单",
+  "author": "",
+  "files": [
+    "assets/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sparrow-js/vue-market/tree/master/blocks/BasicForm"
+  },
+  "license": "MIT",
+  "keywords": ["sparrow", "vue", "block"],
+  "dependencies": {} 
+}
